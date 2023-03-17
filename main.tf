@@ -12,3 +12,8 @@ resource "aws_route53_zone" "avipm" {
   name = "avi.pm"
 }
 
+resource "aws_acm_certificate" "avipm" {
+  domain_name = "avi.pm"
+  subject_alternative_names = ["*.avi.pm"]
+  validation_method = "DNS"
+}
